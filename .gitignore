@@ -1,0 +1,26 @@
+# Dataset (baixado automaticamente pelo MedMNIST)
+data/
+
+# Outputs gerados (gráficos e modelo treinado)
+outputs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pth
+*.egg-info/
+.eggs/
+
+# Ambientes virtuais
+venv/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+Thumbs.db
