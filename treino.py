@@ -1,6 +1,7 @@
 """
 treino.py — Como a rede aprende
-=========================
+=================================
+Responsável: Pessoa 2
 
 Cobre: data augmentation, loss function, otimizador, scheduler e curvas.
 Precisa que modelo.py esteja na mesma pasta (importa BloodCNN de lá).
@@ -21,7 +22,7 @@ from medmnist import BloodMNIST
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Importa a arquitetura definida pela Pessoa 1
+# Importa a arquitetura
 from modelo import BloodCNN
 
 os.makedirs("outputs", exist_ok=True)
@@ -101,7 +102,7 @@ print("\nGerando visualização de augmentation...")
 # Original (sem augmentation)
 ds_orig = BloodMNIST(split="train", transform=test_transform, download=False)
 img_orig = ds_orig[0][0]
-classe   = int(ds_orig[0][1])
+classe   = int(ds_orig[0][1].item())
 
 # Desfaz a normalização para exibir as cores reais
 inv = transforms.Normalize([-1, -1, -1], [2, 2, 2])

@@ -47,7 +47,7 @@ print(f"Dataset carregado: {len(train_ds)} treino | {len(test_ds)} teste")
 # Organiza índices por classe
 indices_por_classe = {c: [] for c in range(8)}
 for i in range(len(train_ds)):
-    label = int(train_ds[i][1])
+    label = int(train_ds[i][1].item())
     indices_por_classe[label].append(i)
 
 print("\nDistribuição no treino:")
@@ -99,7 +99,7 @@ print("\n→ salvo: outputs/exemplos_celulas.png")
 # ─────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(11, 5))
 fig.suptitle("Distribuição de classes — BloodMNIST treino\n"
-             "Dataset balanceado: nenhuma classe domina",
+             "Desbalanceamento moderado: Neutrófilo (2330) tem ~3× mais amostras que Basófilo (852)",
              fontsize=12, fontweight="bold")
 
 contagens = [len(indices_por_classe[c]) for c in range(8)]
